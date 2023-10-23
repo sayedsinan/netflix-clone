@@ -13,26 +13,72 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          backgroundColor: Colors.black,
-        body: 
-         SingleChildScrollView(
+        backgroundColor: Colors.black,
+        body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-
-            
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
-                Column(children: [Container(height: 200,width: 500,
-                 child: Image.asset('images/banner.png',))],),
-                 Text(
+                Column(
+                  children: [
+                    Stack(
+                      children: [
+                        SizedBox(
+                          height: 500,
+                          width: double.infinity,
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                'images/banner.png',
+                                height: 400,
+                                fit: BoxFit.cover,
+                              ),
+                              Positioned(
+                                bottom: 10,
+                                left: 10,
+                                child: Text(
+                                  '#2 in Nigeria Today',
+                                  style: GoogleFonts.bebasNeue(
+                                    color: Colors.white,
+                                    fontSize: 30,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 250,left: 150),
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    // Add your onPressed action here
+                                  },
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons
+                                            .play_arrow, // Replace with the desired icon
+                                      ),
+                                      SizedBox(
+                                          width:
+                                              8), // Add some spacing between the icon and text
+                                      Text('Play'),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Text(
                   'Previews',
                   style:
                       GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 SizedBox(
@@ -67,7 +113,7 @@ class _HomeState extends State<Home> {
                   style:
                       GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 SizedBox(
@@ -102,7 +148,7 @@ class _HomeState extends State<Home> {
                   style:
                       GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
                 ),
-                 SizedBox(
+                SizedBox(
                   width: double.infinity,
                   child: CarouselSlider.builder(
                     itemCount: 10,
@@ -125,7 +171,8 @@ class _HomeState extends State<Home> {
                       );
                     },
                   ),
-                ), const SizedBox(
+                ),
+                const SizedBox(
                   height: 32,
                 ),
                 Text(
@@ -133,7 +180,7 @@ class _HomeState extends State<Home> {
                   style:
                       GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
                 ),
-                 SizedBox(
+                SizedBox(
                   width: double.infinity,
                   child: CarouselSlider.builder(
                     itemCount: 10,
