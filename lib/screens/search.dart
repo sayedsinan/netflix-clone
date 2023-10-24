@@ -79,7 +79,7 @@ class _SearchState extends State<Search> {
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 20,
                     ),
                       SizedBox(
                       width: double.infinity,
@@ -99,7 +99,7 @@ class _SearchState extends State<Search> {
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 20,
                     ),  SizedBox(
                       width: double.infinity,
                       child: CarouselSlider.builder(
@@ -118,7 +118,7 @@ class _SearchState extends State<Search> {
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 20,
                     ),
                   ],
                 ),

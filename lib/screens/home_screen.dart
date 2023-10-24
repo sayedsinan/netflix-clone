@@ -47,23 +47,40 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(right: 250,left: 150),
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    // Add your onPressed action here
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons
-                                            .play_arrow, // Replace with the desired icon
+                                padding: const EdgeInsets.only(
+                                    right: 120, left: 150),
+                                child: Row(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(15),
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                         
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors
+                                              .grey[400], 
+                                        ),
+                                        child:const  Row(
+                                          children: [
+                                            Icon(
+                                              Icons.play_arrow,
+                                              color: Colors
+                                                  .black, // Replace with the desired icon
+                                            ),
+                                            SizedBox(
+                                                width:
+                                                    5), // Add some spacing between the icon and text
+                                            Text(
+                                              'Play',
+                                              style:
+                                                  TextStyle(color: Colors.black),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      SizedBox(
-                                          width:
-                                              8), // Add some spacing between the icon and text
-                                      Text('Play'),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               )
                             ],
