@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflixxclone/api/api.dart';
@@ -78,12 +77,9 @@ class _HomeState extends State<Home> {
                                           children: [
                                             Icon(
                                               Icons.play_arrow,
-                                              color: Colors
-                                                  .black, // Replace with the desired icon
+                                              color: Colors.black,
                                             ),
-                                            SizedBox(
-                                                width:
-                                                    5), // Add some spacing between the icon and text
+                                            SizedBox(width: 5),
                                             Text(
                                               'Play',
                                               style: TextStyle(
@@ -111,7 +107,7 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   height: 15,
                 ),
-                 SizedBox(
+                SizedBox(
                   child: FutureBuilder(
                     future: topratedMovies,
                     builder: (context, snapshot) {
@@ -122,11 +118,9 @@ class _HomeState extends State<Home> {
                       } else if (snapshot.hasData) {
                         return previewSlider(
                           snapshot: snapshot,
-                        ); // Render your content when data is available
+                        );
                       } else {
-                        return Center(
-                            child:
-                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                        return const Center(child: CircularProgressIndicator());
                       }
                     },
                   ),
@@ -153,11 +147,11 @@ class _HomeState extends State<Home> {
                       } else if (snapshot.hasData) {
                         return Trendingslider(
                           snapshot: snapshot,
-                        ); // Render your content when data is available
+                        );
                       } else {
                         return const Center(
-                            child:
-                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                          child: CircularProgressIndicator(),
+                        );
                       }
                     },
                   ),
@@ -181,11 +175,11 @@ class _HomeState extends State<Home> {
                       } else if (snapshot.hasData) {
                         return MoviesSlider(
                           snapshot: snapshot,
-                        ); // Render your content when data is available
+                        );
                       } else {
                         return const Center(
-                            child:
-                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                          child: CircularProgressIndicator(),
+                        );
                       }
                     },
                   ),
@@ -209,11 +203,11 @@ class _HomeState extends State<Home> {
                       } else if (snapshot.hasData) {
                         return upComing(
                           snapshot: snapshot,
-                        ); // Render your content when data is available
+                        ); 
                       } else {
-                        return Center(
+                        return const Center(
                             child:
-                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                                CircularProgressIndicator()); 
                       }
                     },
                   ),

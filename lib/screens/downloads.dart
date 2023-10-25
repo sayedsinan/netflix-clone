@@ -63,7 +63,7 @@ class Downloads extends StatelessWidget {
               onPressed: () {
               
               },
-              child: Text('Find Something to Download'),
+              child:  Text('Find Something to Download'),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
               ),

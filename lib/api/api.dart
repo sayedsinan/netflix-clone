@@ -18,7 +18,7 @@ class Api {
     final response = await http.get(Uri.parse(_trendingurl));
     if (response.statusCode == 200) {
       final decodedData = jsonDecode(response.body)['results'] as List;
-      print(decodedData);
+      // print(decodedData);
       return decodedData.map((movieData) => Movie.fromJson(movieData)).toList();
     } else {
       throw Exception('Something happened');
@@ -29,7 +29,7 @@ class Api {
     final response = await http.get(Uri.parse(_topRatedUrl));
     if (response.statusCode == 200) {
       final decodedData = jsonDecode(response.body)['results'] as List;
-      print(decodedData);
+      // print(decodedData);
       return decodedData.map((movieData) => Movie.fromJson(movieData)).toList();
     } else {
       throw Exception('Something happened');
@@ -40,7 +40,7 @@ class Api {
   final response = await http.get(Uri.parse(_previewurl));
   if (response.statusCode == 200) {
     final decodedData = jsonDecode(response.body)['results'] as List;
-    print('Preview Data: $decodedData'); // Add this line for debugging
+    // print('Preview Data: $decodedData'); // Add this line for debugging
     return decodedData.map((movieData) => Movie.fromJson(movieData)).toList();
   } else {
     throw Exception('Something happened');
@@ -51,7 +51,7 @@ Future<List<Movie>> getupcoming() async {
   final response = await http.get(Uri.parse(_upcomgurl));
   if (response.statusCode == 200) {
     final decodedData = jsonDecode(response.body)['results'] as List;
-    print('Upcoming Data: $decodedData'); // Add this line for debugging
+    // print('Upcoming Data: $decodedData'); // Add this line for debugging
     return decodedData.map((movieData) => Movie.fromJson(movieData)).toList();
   } else {
     throw Exception('Something happened');

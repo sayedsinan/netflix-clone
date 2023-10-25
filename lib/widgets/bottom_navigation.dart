@@ -128,7 +128,7 @@ class _BottomState extends State<Bottom> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 10, left: 35),
+                  padding:const  EdgeInsets.only(bottom: 10, left: 35),
                   child: Row(
                     children: [
                       GestureDetector(
@@ -137,46 +137,46 @@ class _BottomState extends State<Bottom> {
                             indexColor = 0;
                           });
                         },
-                        child: Text(
+                        child:const Text(
                           'Home',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
-                      SizedBox(
+                    const   SizedBox(
                         width: 20,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding:const EdgeInsets.only(left: 10),
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
                               indexColor = 1;
                             });
                           },
-                          child: Text(
+                          child:const Text(
                             'Search',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
-                      SizedBox(
+                    const  SizedBox(
                         width: 10,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: const EdgeInsets.only(left: 10),
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
                               indexColor = 2;
                             });
                           },
-                          child: Text(
+                          child:const Text(
                             'Coming soon',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
-                      SizedBox(
+                    const  SizedBox(
                         width: 10,
                       ),
                       GestureDetector(
@@ -185,12 +185,12 @@ class _BottomState extends State<Bottom> {
                             indexColor = 3;
                           });
                         },
-                        child: Text(
+                        child: const Text(
                           'Downloads',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
-                      SizedBox(
+                    const  SizedBox(
                         width: 10,
                       ),
                       GestureDetector(
@@ -199,7 +199,7 @@ class _BottomState extends State<Bottom> {
                             indexColor = 4;
                           });
                         },
-                        child: Text(
+                        child:const Text(
                           'More',
                           style: TextStyle(color: Colors.white),
                         ),

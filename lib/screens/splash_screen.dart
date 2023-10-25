@@ -13,9 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Add a delay of 3 seconds and then navigate to the next screen.
-    Future.delayed(Duration(seconds: 3), () {
-      // Navigate to the next screen, for example, MyNextScreen.
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => const User(),
       ));

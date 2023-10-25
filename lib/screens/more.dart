@@ -15,7 +15,7 @@ class More extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Container(
+                    child: SizedBox(
                       height: 100,
                       width: 70,
                       child: Image.asset("images/User1.png"),
@@ -26,7 +26,7 @@ class More extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: Container(
+                    child: SizedBox(
                       height: 90,
                       width: 65,
                       child: Image.asset('images/User2.png'),
@@ -37,7 +37,7 @@ class More extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: Container(
+                    child: SizedBox(
                       height: 90,
                       width: 65,
                       child: Image.asset('images/User3.png'),
@@ -48,7 +48,7 @@ class More extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: Container(
+                    child: SizedBox(
                       height: 90,
                       width: 65,
                       child: Image.asset('images/KidsUser.png'),

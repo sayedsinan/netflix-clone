@@ -105,7 +105,6 @@ class _SearchState extends State<Search> {
                         itemCount: 1,
                         options: CarouselOptions(
                             height: 150,
-                            
                             ),
                         itemBuilder: (context, itemIndex, pageViewIndex) {
                           return SizedBox(
