@@ -17,7 +17,7 @@ class Movie {
     return Movie(
         title: json["title"]??"Movie title",
         original_title: json["original_title"],
-        backdrop_path: json["backdrop_path"],
+        backdrop_path: json["poster_path"],
         vote_average: json["vote_average"],
         overview: json["overview"]);
   }

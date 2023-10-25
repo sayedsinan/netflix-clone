@@ -33,11 +33,11 @@ class _SearchState extends State<Search> {
                   hintText: '    Search for a show , movie,genre,e.t.c',
                   hintStyle: TextStyle(color: Colors.grey[700])),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
+          const   Padding(
+              padding:  EdgeInsets.only(left: 20),
               child: Text(
                 'Top Searches',
                 style: TextStyle(
@@ -58,7 +58,7 @@ class _SearchState extends State<Search> {
                       style: GoogleFonts.bebasNeue(
                           color: Colors.white, fontSize: 30),
                     ),
-                    SizedBox(
+                const    SizedBox(
                       height: 15,
                     ),
                     SizedBox(
@@ -90,10 +90,10 @@ class _SearchState extends State<Search> {
                             
                             ),
                         itemBuilder: (context, itemIndex, pageViewIndex) {
-                          return Container(
+                          return SizedBox(
                             height: 50,
                             width: 500,
-                            color: Colors.amber,
+                            child: Image.network('https://image.tmdb.org/t/p/w500//A4j8S6moJS2zNtRR8oWF08gRnL5.jpg'),
                           );
                         },
                       ),
@@ -109,10 +109,10 @@ class _SearchState extends State<Search> {
                             
                             ),
                         itemBuilder: (context, itemIndex, pageViewIndex) {
-                          return Container(
+                          return SizedBox(
                             height: 50,
                             width: 500,
-                            color: Colors.amber,
+                            child: Image.network('https://image.tmdb.org/t/p/w500//dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg'),
                           );
                         },
                       ),

@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflixxclone/api/api.dart';
+import 'package:netflixxclone/models/movie.dart';
+import 'package:netflixxclone/widgets/slider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,6 +13,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  late Future<List<Movie>> previewMovies;
+  late Future<List<Movie>> trendingmovies;
+  late Future<List<Movie>> topratedMovies;
+  late Future<List<Movie>> upcomingMovies;
+  @override
+  void initState() {
+    super.initState();
+    previewMovies = Api().getpreview();
+    trendingmovies = Api().getTrendingMovies();
+    topratedMovies = Api().getToprated();
+    upcomingMovies = Api().getupcoming();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,14 +70,11 @@ class _HomeState extends State<Home> {
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
                                       child: ElevatedButton(
-                                        onPressed: () {
-                                         
-                                        },
+                                        onPressed: () {},
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors
-                                              .grey[400], 
+                                          backgroundColor: Colors.grey[400],
                                         ),
-                                        child:const  Row(
+                                        child: const Row(
                                           children: [
                                             Icon(
                                               Icons.play_arrow,
@@ -73,8 +86,8 @@ class _HomeState extends State<Home> {
                                                     5), // Add some spacing between the icon and text
                                             Text(
                                               'Play',
-                                              style:
-                                                  TextStyle(color: Colors.black),
+                                              style: TextStyle(
+                                                  color: Colors.black),
                                             ),
                                           ],
                                         ),
@@ -98,27 +111,23 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   height: 15,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: CarouselSlider.builder(
-                    itemCount: 10,
-                    options: CarouselOptions(
-                        height: 150,
-                        autoPlay: true,
-                        viewportFraction: 0.55,
-                        enlargeCenterPage: true,
-                        pageSnapping: true,
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        autoPlayAnimationDuration: const Duration(seconds: 2)),
-                    itemBuilder: (context, itemIndex, pageViewIndex) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: Container(
-                          height: 50,
-                          width: 150,
-                          color: Colors.amber,
-                        ),
-                      );
+                 SizedBox(
+                  child: FutureBuilder(
+                    future: topratedMovies,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Text(snapshot.error.toString()),
+                        );
+                      } else if (snapshot.hasData) {
+                        return previewSlider(
+                          snapshot: snapshot,
+                        ); // Render your content when data is available
+                      } else {
+                        return Center(
+                            child:
+                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                      }
                     },
                   ),
                 ),
@@ -134,26 +143,22 @@ class _HomeState extends State<Home> {
                   height: 15,
                 ),
                 SizedBox(
-                  width: double.infinity,
-                  child: CarouselSlider.builder(
-                    itemCount: 10,
-                    options: CarouselOptions(
-                        height: 200,
-                        autoPlay: true,
-                        viewportFraction: 0.55,
-                        enlargeCenterPage: true,
-                        pageSnapping: true,
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        autoPlayAnimationDuration: const Duration(seconds: 2)),
-                    itemBuilder: (context, itemIndex, pageViewIndex) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Container(
-                          height: 200,
-                          width: 200,
-                          color: Colors.amber,
-                        ),
-                      );
+                  child: FutureBuilder(
+                    future: trendingmovies,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Text(snapshot.error.toString()),
+                        );
+                      } else if (snapshot.hasData) {
+                        return Trendingslider(
+                          snapshot: snapshot,
+                        ); // Render your content when data is available
+                      } else {
+                        return const Center(
+                            child:
+                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                      }
                     },
                   ),
                 ),
@@ -166,26 +171,22 @@ class _HomeState extends State<Home> {
                       GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
                 ),
                 SizedBox(
-                  width: double.infinity,
-                  child: CarouselSlider.builder(
-                    itemCount: 10,
-                    options: CarouselOptions(
-                        height: 200,
-                        autoPlay: true,
-                        viewportFraction: 0.55,
-                        enlargeCenterPage: true,
-                        pageSnapping: true,
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        autoPlayAnimationDuration: const Duration(seconds: 2)),
-                    itemBuilder: (context, itemIndex, pageViewIndex) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Container(
-                          height: 200,
-                          width: 200,
-                          color: Colors.amber,
-                        ),
-                      );
+                  child: FutureBuilder(
+                    future: topratedMovies,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Text(snapshot.error.toString()),
+                        );
+                      } else if (snapshot.hasData) {
+                        return MoviesSlider(
+                          snapshot: snapshot,
+                        ); // Render your content when data is available
+                      } else {
+                        return const Center(
+                            child:
+                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                      }
                     },
                   ),
                 ),
@@ -198,26 +199,22 @@ class _HomeState extends State<Home> {
                       GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
                 ),
                 SizedBox(
-                  width: double.infinity,
-                  child: CarouselSlider.builder(
-                    itemCount: 10,
-                    options: CarouselOptions(
-                        height: 200,
-                        autoPlay: true,
-                        viewportFraction: 0.55,
-                        enlargeCenterPage: true,
-                        pageSnapping: true,
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        autoPlayAnimationDuration: const Duration(seconds: 2)),
-                    itemBuilder: (context, itemIndex, pageViewIndex) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Container(
-                          height: 200,
-                          width: 200,
-                          color: Colors.amber,
-                        ),
-                      );
+                  child: FutureBuilder(
+                    future: trendingmovies,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Text(snapshot.error.toString()),
+                        );
+                      } else if (snapshot.hasData) {
+                        return upComing(
+                          snapshot: snapshot,
+                        ); // Render your content when data is available
+                      } else {
+                        return Center(
+                            child:
+                                CircularProgressIndicator()); // Return CircularProgressIndicator for loading state
+                      }
                     },
                   ),
                 ),
