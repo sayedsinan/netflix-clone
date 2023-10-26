@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflixxclone/models/movie.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -48,19 +47,21 @@ class _SearchState extends State<Search> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(
+        const    SizedBox(
               height: 40,
             ),
             Column(
               children: [
                 Row(
                   children: [
-                    Container(
-                      height: 120,
-                      width: 150,
-                      child: Image.network(
-                        'https://image.tmdb.org/t/p/w500//jP3FatCTHc460ZGW57q9ypTdBqu.jpg',
-                        fit: BoxFit.cover,
+                    SizedBox(
+                      child: SizedBox(
+                        height: 120,
+                        width: 150,
+                        child: Image.network(
+                          'https://image.tmdb.org/t/p/w500//jP3FatCTHc460ZGW57q9ypTdBqu.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Container(
@@ -77,10 +78,10 @@ class _SearchState extends State<Search> {
                                   color: Colors.white, fontSize: 20),
                             ),
                           ),
-                          SizedBox(
+                      const    SizedBox(
                             width: 105,
                           ),
-                          Icon(
+                     const     Icon(
                             Icons.play_circle,
                             color: Colors.white,
                             size: 40,
@@ -90,12 +91,12 @@ class _SearchState extends State<Search> {
                     ),
                   ],
                 ),
-                SizedBox(
+            const    SizedBox(
                   height: 20,
                 ),
                 Row(
                   children: [
-                    Container(
+                    SizedBox(
                         height: 120,
                         width: 150,
                         child: Image.network(
@@ -116,10 +117,10 @@ class _SearchState extends State<Search> {
                                   fontSize: 20, color: Colors.white),
                             ),
                           ),
-                          SizedBox(
+                       const   SizedBox(
                             width: 105,
                           ),
-                          Icon(
+                     const     Icon(
                             Icons.play_circle,
                             color: Colors.white,
                             size: 40,
@@ -129,12 +130,12 @@ class _SearchState extends State<Search> {
                     ),
                   ],
                 ),
-                SizedBox(
+            const    SizedBox(
                   height: 20,
                 ),
                 Row(
                   children: [
-                    Container(
+                    SizedBox(
                         height: 120,
                         width: 150,
                         child: Image.network(
@@ -155,10 +156,10 @@ class _SearchState extends State<Search> {
                                   fontSize: 20, color: Colors.white),
                             ),
                           ),
-                          SizedBox(
+                    const      SizedBox(
                             width: 88,
                           ),
-                          Icon(
+                        const  Icon(
                             Icons.play_circle,
                             color: Colors.white,
                             size: 40,
@@ -168,12 +169,12 @@ class _SearchState extends State<Search> {
                     ),
                   ],
                 ),
-                SizedBox(
+               const SizedBox(
                   height: 20,
                 ),
                 Row(
                   children: [
-                    Container(
+                    SizedBox(
                         height: 120,
                         width: 150,
                         child: Image.network(
@@ -194,10 +195,10 @@ class _SearchState extends State<Search> {
                                   fontSize: 20, color: Colors.white),
                             ),
                           ),
-                          SizedBox(
+                        const  SizedBox(
                             width: 58,
                           ),
-                          Icon(
+                        const  Icon(
                             Icons.play_circle,
                             color: Colors.white,
                             size: 40,
