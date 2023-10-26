@@ -97,6 +97,7 @@ class MoviesSlider extends StatelessWidget {
     );
   }
 }
+// Hwello mj ldn        m imahe pant
 
 class upComing extends StatelessWidget {
   const upComing({super.key, required this.snapshot});

@@ -25,8 +25,8 @@ class _BottomState extends State<Bottom> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screen[indexColor],
-      // ignore: sized_box_for_whitespace
-      bottomNavigationBar: Container(
+      
+      bottomNavigationBar: SizedBox(
         height: 70,
         child: BottomAppBar(
           color: Colors.grey[900],
@@ -97,7 +97,7 @@ class _BottomState extends State<Bottom> {
                           indexColor = 3;
                         });
                       },
-                      child: Padding(
+                      child: Padding( 
                         padding: const EdgeInsets.only(left: 50),
                         child: Icon(
                           Icons.download,
