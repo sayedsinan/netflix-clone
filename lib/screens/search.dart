@@ -1,7 +1,6 @@
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflixxclone/models/movie.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -20,24 +19,27 @@ class _SearchState extends State<Search> {
           children: [
             TextField(
               decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.grey[900],
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.grey[700],
-                  ),
-                  suffixIcon: Icon(
-                    Icons.mic,
-                    color: Colors.grey[700],
-                  ),
-                  hintText: '    Search for a show , movie,genre,e.t.c',
-                  hintStyle: TextStyle(color: Colors.grey[700])),
+                filled: true,
+                fillColor: Colors.grey[900],
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.grey[700],
+                ),
+                suffixIcon: Icon(
+                  Icons.mic,
+                  color: Colors.grey[700],
+                ),
+                hintText: '    Search for a show , movie,genre,e.t.c',
+                hintStyle: TextStyle(
+                  color: Colors.grey[700],
+                ),
+              ),
             ),
             const SizedBox(
               height: 20,
             ),
-          const   Padding(
-              padding:  EdgeInsets.only(left: 20),
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
               child: Text(
                 'Top Searches',
                 style: TextStyle(
@@ -46,82 +48,167 @@ class _SearchState extends State<Search> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            SizedBox(
+              height: 40,
+            ),
+            Column(
+              children: [
+                Row(
                   children: [
-                    Text(
-                      '',
-                      style: GoogleFonts.bebasNeue(
-                          color: Colors.white, fontSize: 30),
-                    ),
-                const    SizedBox(
-                      height: 15,
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: CarouselSlider.builder(
-                        itemCount: 1,
-                        options: CarouselOptions(
-                            height: 150,
-                            ),
-                        itemBuilder: (context, itemIndex, pageViewIndex) {
-                          return Container(
-                            height: 50,
-                            width: 500,
-                            color: Colors.amber,
-                          );
-                        },
-                      ),
-                    ),  
-                        const SizedBox(
-                      height: 20,
-                    ),
-                      SizedBox(
-                      width: double.infinity,
-                      child: CarouselSlider.builder(
-                        itemCount: 1,
-                        options: CarouselOptions(
-                            height: 150,
-                            
-                            ),
-                        itemBuilder: (context, itemIndex, pageViewIndex) {
-                          return SizedBox(
-                            height: 50,
-                            width: 500,
-                            child: Image.network('https://image.tmdb.org/t/p/w500//A4j8S6moJS2zNtRR8oWF08gRnL5.jpg'),
-                          );
-                        },
+                    Container(
+                      height: 120,
+                      width: 150,
+                      child: Image.network(
+                        'https://image.tmdb.org/t/p/w500//jP3FatCTHc460ZGW57q9ypTdBqu.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),  SizedBox(
-                      width: double.infinity,
-                      child: CarouselSlider.builder(
-                        itemCount: 1,
-                        options: CarouselOptions(
-                            height: 150,
+                    Container(
+                      height: 120,
+                      width: 240,
+                      color: Colors.grey[800],
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text(
+                              '57 Seconds',
+                              style: GoogleFonts.bebasNeue(
+                                  color: Colors.white, fontSize: 20),
                             ),
-                        itemBuilder: (context, itemIndex, pageViewIndex) {
-                          return SizedBox(
-                            height: 50,
-                            width: 500,
-                            child: Image.network('https://image.tmdb.org/t/p/w500//dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg'),
-                          );
-                        },
+                          ),
+                          SizedBox(
+                            width: 105,
+                          ),
+                          Icon(
+                            Icons.play_circle,
+                            color: Colors.white,
+                            size: 40,
+                          )
+                        ],
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
                     ),
                   ],
                 ),
-              ),
-            ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Container(
+                        height: 120,
+                        width: 150,
+                        child: Image.network(
+                          'https://image.tmdb.org/t/p/w500//rYcZGmu0DIHIyQFnni5HB0cliMQ.jpg',
+                          fit: BoxFit.cover,
+                        )),
+                    Container(
+                      height: 120,
+                      width: 240,
+                      color: Colors.grey[800],
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text(
+                              '발레리나',
+                              style: GoogleFonts.bebasNeue(
+                                  fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 105,
+                          ),
+                          Icon(
+                            Icons.play_circle,
+                            color: Colors.white,
+                            size: 40,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Container(
+                        height: 120,
+                        width: 150,
+                        child: Image.network(
+                          'https://image.tmdb.org/t/p/w500//r7DuyYJ0N3cD8bRKsR5Ygq2P7oa.jpg',
+                          fit: BoxFit.cover,
+                        )),
+                    Container(
+                      height: 120,
+                      width: 240,
+                      color: Colors.grey[800],
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text(
+                              'Gran Turismo',
+                              style: GoogleFonts.bebasNeue(
+                                  fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 88,
+                          ),
+                          Icon(
+                            Icons.play_circle,
+                            color: Colors.white,
+                            size: 40,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Container(
+                        height: 120,
+                        width: 150,
+                        child: Image.network(
+                          'https://image.tmdb.org/t/p/w500//8pjWz2lt29KyVGoq1mXYu6Br7dE.jpg',
+                          fit: BoxFit.cover,
+                        )),
+                    Container(
+                      height: 120,
+                      width: 240,
+                      color: Colors.grey[800],
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text(
+                              'Meg 2: The Trench',
+                              style: GoogleFonts.bebasNeue(
+                                  fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 58,
+                          ),
+                          Icon(
+                            Icons.play_circle,
+                            color: Colors.white,
+                            size: 40,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),
