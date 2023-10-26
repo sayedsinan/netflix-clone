@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflixxclone/constant.dart';
+import 'package:netflixxclone/constant/constant.dart';
 import 'package:netflixxclone/models/movie.dart';
 
 class Details extends StatelessWidget {
