@@ -28,216 +28,263 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
-        body: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  children: [
-                    Stack(
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                children: [
+                  SizedBox(
+                    height: 500,
+                    width: double.infinity,
+                    child: Column(
                       children: [
-                        SizedBox(
-                          height: 500,
-                          width: double.infinity,
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                'images/banner.png',
-                                height: 400,
-                                fit: BoxFit.cover,
+                        Stack(
+                          children: [
+                            Image.asset(
+                              'images/banner.png',
+                              height: 400,
+                              fit: BoxFit.cover,
+                            ),
+                            AppBar(
+                              backgroundColor: Colors.transparent,
+                              leading: SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: Image.asset(
+                                  'images/Netflix-Symbol.png',
+                                ),
                               ),
-                              Positioned(
-                                bottom: 10,
-                                left: 10,
-                                child: Text(
-                                  '#2 in Nigeria Today',
-                                  style: GoogleFonts.bebasNeue(
+                              title:const Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text('Tv shows',style: TextStyle(fontSize: 15),),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text('Movies',style: TextStyle(fontSize: 15),),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text('My List',style: TextStyle(fontSize: 15),)
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        Positioned(
+                          bottom: 10,
+                          left: 10,
+                          child: Text(
+                            '#2 in Nigeria Today',
+                            style: GoogleFonts.bebasNeue(
+                              color: Colors.white,
+                              fontSize: 30,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 70),
+                          child: Row(
+                            children: [
+                              const Column(
+                                children: [
+                                  Icon(
+                                    Icons.add,
                                     color: Colors.white,
-                                    fontSize: 30,
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'My List',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                width: 40,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.grey[400],
+                                  ),
+                                  child: const Row(
+                                    children: [
+                                      Icon(
+                                        Icons.play_arrow,
+                                        color: Colors.black,
+                                      ),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        'Play',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 70),
-                                child: Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Icon(
-                                          Icons.add,
-                                          color: Colors.white,
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'My List',
-                                          style: TextStyle(color: Colors.white),
-                                        )
-                                      ],
+                              const SizedBox(
+                                width: 40,
+                              ),
+                              const Column(
+                                children: [
+                                  Icon(
+                                    Icons.info_outline,
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'info',
+                                    style: TextStyle(
+                                      color: Colors.white,
                                     ),
-                                    SizedBox(
-                                      width: 40,
-                                    ),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: ElevatedButton(
-                                          onPressed: () {},
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.grey[400],
-                                          ),
-                                          child: const Row(children: [
-                                            Icon(
-                                              Icons.play_arrow,
-                                              color: Colors.black,
-                                            ),
-                                            SizedBox(width: 5),
-                                            Text(
-                                              'Play',
-                                              style:
-                                                  TextStyle(color: Colors.black),
-                                            )
-                                          ])),
-                                    ),SizedBox(width: 40,),
-                                    Column(
-                                      children: [
-                                        Icon(
-                                          Icons.info_outline,
-                                          color: Colors.white,
-                                        )
-                                        ,
-                                        SizedBox(height: 5,),
-                                        Text('info',style: TextStyle(color: Colors.white),)
-                                      ],
-                                    )
-                                  ],
-                                ),
+                                  )
+                                ],
                               )
                             ],
                           ),
-                        ),
+                        )
                       ],
                     ),
-                  ],
-                ),
-                Text(
-                  'Previews',
-                  style:
-                      GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                SizedBox(
-                  child: FutureBuilder(
-                    future: topratedMovies,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(
-                          child: Text(snapshot.error.toString()),
-                        );
-                      } else if (snapshot.hasData) {
-                        return previewSlider(
-                          snapshot: snapshot,
-                        );
-                      } else {
-                        return const Center(child: CircularProgressIndicator());
-                      }
-                    },
                   ),
+                ],
+              ),
+              Text(
+                'Previews',
+                style: GoogleFonts.bebasNeue(
+                  color: Colors.white,
+                  fontSize: 30,
                 ),
-                const SizedBox(
-                  height: 32,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                child: FutureBuilder(
+                  future: topratedMovies,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Text(
+                          snapshot.error.toString(),
+                        ),
+                      );
+                    } else if (snapshot.hasData) {
+                      return previewSlider(
+                        snapshot: snapshot,
+                      );
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  },
                 ),
-                Text(
-                  'Trending Movies',
-                  style:
-                      GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              Text(
+                'Trending Movies',
+                style: GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                child: FutureBuilder(
+                  future: trendingmovies,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Text(snapshot.error.toString()),
+                      );
+                    } else if (snapshot.hasData) {
+                      return Trendingslider(
+                        snapshot: snapshot,
+                      );
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  },
                 ),
-                const SizedBox(
-                  height: 15,
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              Text(
+                'Top rated movies',
+                style: GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
+              ),
+              SizedBox(
+                child: FutureBuilder(
+                  future: topratedMovies,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Text(snapshot.error.toString()),
+                      );
+                    } else if (snapshot.hasData) {
+                      return MoviesSlider(
+                        snapshot: snapshot,
+                      );
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  },
                 ),
-                SizedBox(
-                  child: FutureBuilder(
-                    future: trendingmovies,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(
-                          child: Text(snapshot.error.toString()),
-                        );
-                      } else if (snapshot.hasData) {
-                        return Trendingslider(
-                          snapshot: snapshot,
-                        );
-                      } else {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    },
-                  ),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              Text(
+                'Upcoming movies',
+                style: GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
+              ),
+              SizedBox(
+                child: FutureBuilder(
+                  future: trendingmovies,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Text(
+                          snapshot.error.toString(),
+                        ),
+                      );
+                    } else if (snapshot.hasData) {
+                      return upComing(
+                        snapshot: snapshot,
+                      );
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  },
                 ),
-                const SizedBox(
-                  height: 32,
-                ),
-                Text(
-                  'Top rated movies',
-                  style:
-                      GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
-                ),
-                SizedBox(
-                  child: FutureBuilder(
-                    future: topratedMovies,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(
-                          child: Text(snapshot.error.toString()),
-                        );
-                      } else if (snapshot.hasData) {
-                        return MoviesSlider(
-                          snapshot: snapshot,
-                        );
-                      } else {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    },
-                  ),
-                ),
-                const SizedBox(
-                  height: 32,
-                ),
-                Text(
-                  'Upcoming movies',
-                  style:
-                      GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
-                ),
-                SizedBox(
-                  child: FutureBuilder(
-                    future: trendingmovies,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(
-                          child: Text(snapshot.error.toString()),
-                        );
-                      } else if (snapshot.hasData) {
-                        return upComing(
-                          snapshot: snapshot,
-                        );
-                      } else {
-                        return const Center(child: CircularProgressIndicator());
-                      }
-                    },
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
