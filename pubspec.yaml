@@ -71,6 +71,10 @@ flutter:
     - images/banner.png
     - images/
     - images/Netflix-Symbol.png
+    - images/Whatsapp.png
+    - images/Gmail.png
+    - images/Facebook.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
