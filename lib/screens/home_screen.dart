@@ -62,19 +62,35 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    right: 120, left: 150),
+                                padding: const EdgeInsets.only(left: 70),
                                 child: Row(
                                   children: [
+                                    Column(
+                                      children: [
+                                        Icon(
+                                          Icons.add,
+                                          color: Colors.white,
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'My List',
+                                          style: TextStyle(color: Colors.white),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 40,
+                                    ),
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
                                       child: ElevatedButton(
-                                        onPressed: () {},
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.grey[400],
-                                        ),
-                                        child: const Row(
-                                          children: [
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.grey[400],
+                                          ),
+                                          child: const Row(children: [
                                             Icon(
                                               Icons.play_arrow,
                                               color: Colors.black,
@@ -82,13 +98,22 @@ class _HomeState extends State<Home> {
                                             SizedBox(width: 5),
                                             Text(
                                               'Play',
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
+                                              style:
+                                                  TextStyle(color: Colors.black),
+                                            )
+                                          ])),
+                                    ),SizedBox(width: 40,),
+                                    Column(
+                                      children: [
+                                        Icon(
+                                          Icons.info_outline,
+                                          color: Colors.white,
+                                        )
+                                        ,
+                                        SizedBox(height: 5,),
+                                        Text('info',style: TextStyle(color: Colors.white),)
+                                      ],
+                                    )
                                   ],
                                 ),
                               )
@@ -203,11 +228,9 @@ class _HomeState extends State<Home> {
                       } else if (snapshot.hasData) {
                         return upComing(
                           snapshot: snapshot,
-                        ); 
+                        );
                       } else {
-                        return const Center(
-                            child:
-                                CircularProgressIndicator()); 
+                        return const Center(child: CircularProgressIndicator());
                       }
                     },
                   ),

@@ -183,7 +183,7 @@ class _ComingState extends State<Coming> {
                   )
                 ],
               ),
-              SizedBox(
+            const  SizedBox(
                 height: 20,
               ),
               Padding(
@@ -197,8 +197,8 @@ class _ComingState extends State<Coming> {
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
+          const    Padding(
+                padding:  EdgeInsets.all(10.0),
                 child: Text(
                   """When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one—until the FBI steps in to unravel the mystery.""",
                   style: TextStyle(color: Colors.white),
@@ -253,7 +253,7 @@ class _ComingState extends State<Coming> {
                   )
                 ],
               ),
-              SizedBox(
+          const    SizedBox(
                 height: 20,
               ),
               Padding(
@@ -267,8 +267,8 @@ class _ComingState extends State<Coming> {
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
+            const  Padding(
+                padding:  EdgeInsets.all(10.0),
                 child: Text(
                   """In a Mexican border town plagued by neglect, corruption, and violence, a frustrated teacher tries a radical new method to break through his students’ apathy and unlock their curiosity, their potential… and maybe even their genius.""",
                   style: TextStyle(color: Colors.white),
@@ -322,7 +322,7 @@ class _ComingState extends State<Coming> {
                   )
                 ],
               ),
-              SizedBox(
+             const SizedBox(
                 height: 20,
               ),
               Padding(
@@ -336,8 +336,8 @@ class _ComingState extends State<Coming> {
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
+             const Padding(
+                padding:  EdgeInsets.all(10.0),
                 child: Text(
                   """As her world is shrouded in darkness, a young girl must overcome her fears and travel to a mysterious city of light, save her father from a dangerous scientist and prevent the destruction of her planet.""",
                   style: TextStyle(color: Colors.white),
