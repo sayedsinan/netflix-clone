@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflixxclone/screens/search.dart';
+
 
 class More extends StatelessWidget {
   const More({super.key});
@@ -133,7 +133,7 @@ class More extends StatelessWidget {
                 Container(
                   height: 300,
                   width: 400,
-                  decoration: BoxDecoration(color: Color.fromARGB(255, 19, 19, 19)),
+                  decoration:const  BoxDecoration(color: Color.fromARGB(255, 19, 19, 19)),
                   child: Column(
                     children: [
                   const    Padding(
@@ -177,7 +177,8 @@ class More extends StatelessWidget {
                           'Terms & Conditions',
                           style: TextStyle(color: Colors.white),
                         ),
-                      ),SizedBox(height: 10,),
+                      ),
+                       const SizedBox(height: 10,),
                       Row(
                         children: [
                           Padding(
@@ -192,10 +193,10 @@ class More extends StatelessWidget {
                             height: 45,
                             width: 80,
                             color: Colors.white,
-                            child: Padding(
+                            child: const Padding(
                               padding:
-                                  const EdgeInsets.only(top: 15, left: 10),
-                              child: const Text('Copy Link'),
+                                   EdgeInsets.only(top: 15, left: 10),
+                              child:  Text('Copy Link'),
                             ),
                           )
                         ],

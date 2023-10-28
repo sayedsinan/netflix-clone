@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:netflixxclone/screens/coming_soon_duplicats.dart';
+import 'package:netflixxclone/screens/search.duplicates.dart';
 import 'package:netflixxclone/widgets/bottom_navigation.dart';
 // import 'package:netflixclone/widgets/bottom_navigation.dart';
 
@@ -43,7 +45,7 @@ class User extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const  Bottom();
+                      return const Bottom();
                     }));
                   },
                   child: Container(
@@ -56,21 +58,36 @@ class User extends StatelessWidget {
               const SizedBox(
                 width: 50,
               ),
-              Container(
-                child: Image.asset('images/User3.png'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return SearchDup();
+                  }));
+                },
+                child: Container(
+                  child: Image.asset('images/User3.png'),
+                ),
               )
             ],
           ),
           const SizedBox(
             height: 20,
           ),
-          const Row(
+          Row(
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 100),
-                child: Text(
-                  'User 1',
-                  style: TextStyle(color: Colors.white),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Coming();
+                    }));
+                  },
+                  child: Text(
+                    'User 1',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               SizedBox(
