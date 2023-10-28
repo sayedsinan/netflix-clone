@@ -182,7 +182,7 @@ class _ComingState extends State<Coming> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Row(
+                const     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Icon(
@@ -200,7 +200,7 @@ class _ComingState extends State<Coming> {
                         ),
                       ],
                     ),
-                    Row(
+            const         Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
@@ -217,9 +217,10 @@ class _ComingState extends State<Coming> {
                   
                       ],
 
-                    ),SizedBox(height: 30,),
+                    ),
+                    const SizedBox(height: 1,),
                      Padding(
-                padding: const EdgeInsets.only(right: 60),
+                padding: const EdgeInsets.only(right: 140,),
                 child: Text(
                   slide['title'],
                   style:
@@ -234,7 +235,7 @@ class _ComingState extends State<Coming> {
                       GoogleFonts.bebasNeue(color: Colors.white,),
                 ),
               ),
-              SizedBox(height: 40,)
+             const  SizedBox(height: 40,)
                   ],
                 ),
               const SizedBox(

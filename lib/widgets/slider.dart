@@ -99,8 +99,8 @@ class MoviesSlider extends StatelessWidget {
 }
 // Hwello mj ldn        m imahe pant
 
-class upComing extends StatelessWidget {
-  const upComing({super.key, required this.snapshot});
+class Upcoming extends StatelessWidget {
+  const Upcoming({super.key, required this.snapshot});
   final AsyncSnapshot snapshot;
 
   @override
@@ -147,8 +147,8 @@ class upComing extends StatelessWidget {
   }
 }
 
-class previewSlider extends StatelessWidget {
-  const previewSlider({super.key, required this.snapshot});
+class PreviewSlider extends StatelessWidget {
+  const PreviewSlider({super.key, required this.snapshot});
   final AsyncSnapshot snapshot;
 
   @override

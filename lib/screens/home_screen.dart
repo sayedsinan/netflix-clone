@@ -184,7 +184,7 @@ class _HomeState extends State<Home> {
                         ),
                       );
                     } else if (snapshot.hasData) {
-                      return previewSlider(
+                      return PreviewSlider(
                         snapshot: snapshot,
                       );
                     } else {
@@ -270,7 +270,7 @@ class _HomeState extends State<Home> {
                         ),
                       );
                     } else if (snapshot.hasData) {
-                      return upComing(
+                      return Upcoming(
                         snapshot: snapshot,
                       );
                     } else {

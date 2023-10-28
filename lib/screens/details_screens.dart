@@ -23,7 +23,7 @@ class Details extends StatelessWidget {
               flexibleSpace: FlexibleSpaceBar(
                 background: ClipRRect(
                   borderRadius:
-                      BorderRadius.only(bottomLeft: Radius.circular(24)),
+                      const BorderRadius.only(bottomLeft:  Radius.circular(24)),
                   child: Image.network(
                     '${Constan.imagPath}${movie.backdrop_path}',
                     filterQuality: FilterQuality.high,
@@ -70,7 +70,7 @@ class Details extends StatelessWidget {
                                 Text('Rating :',style: GoogleFonts.bebasNeue(color: Colors.white,fontSize: 15),),
                                 Text(
                                   movie.vote_average.toString(),
-                                  style: TextStyle(color: Colors.white),
+                                  style:  const TextStyle(color: Colors.white),
                                 )
                               ],
                             ),

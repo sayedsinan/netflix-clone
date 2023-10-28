@@ -182,7 +182,7 @@ class _ComingState extends State<Coming> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Icon(
@@ -200,7 +200,7 @@ class _ComingState extends State<Coming> {
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
@@ -214,33 +214,36 @@ class _ComingState extends State<Coming> {
                           'Share',
                           style: TextStyle(color: Colors.white, fontSize: 10),
                         )
-                  
                       ],
-
-                    ),SizedBox(height: 30,),
-                     Padding(
-                padding: const EdgeInsets.only(right: 60),
-                child: Text(
-                  slide['title'],
-                  style:
-                      GoogleFonts.bebasNeue(color: Colors.white, fontSize: 30),
-                ),
-              ),
-                 Padding(
-                padding: const EdgeInsets.only(right: 60,bottom: 40),
-                child: Text(
-                  slide['overview']??"Nothing",
-                  style:
-                      GoogleFonts.bebasNeue(color: Colors.white,),
-                ),
-              ),
-              SizedBox(height: 40,)
+                    ),
+                  const   SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 60),
+                      child: Text(
+                        slide['title'],
+                        style: GoogleFonts.bebasNeue(
+                            color: Colors.white, fontSize: 30),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 60, bottom: 40),
+                      child: Text(
+                        slide['overview'] ?? "Nothing",
+                        style: GoogleFonts.bebasNeue(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    )
                   ],
                 ),
               const SizedBox(
                 height: 20,
               ),
-             
             ],
           )
         ],

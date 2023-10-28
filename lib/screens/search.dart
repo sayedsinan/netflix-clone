@@ -98,7 +98,7 @@ class _SearchState extends State<Search> {
                                   height: 100,
                                   width: 150,
                                   child: Image.network(
-                                    '${Constan.imagPath}${searchpart['poster_path']}',
+                                    '${Constan.imagPath}${searchpart['backdrop_path']}',
                                     fit: BoxFit.cover,
                                   ),
                                 ),
